@@ -7,6 +7,7 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import TextField from '@mui/material/TextField';
 import React from 'react';
 
 function CheckboxExample() {
@@ -22,6 +23,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField variant="filled" color="secondary" type="time" label="Time" />
+        <TextField variant="outlined" color="primary" type="email" label="Email" placeholder="test@test.com" />
         <CheckboxExample />
         <ButtonGroup variant="contained" size="large">
           {/* variant="contained" size="large" href="#" onClick={() => alert("Hello")} disabled  style={{ fontSize: 18 }} endIcon={<SaveAltIcon />}*/}
@@ -34,7 +37,7 @@ function App() {
         </ButtonGroup>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-    </div>
+    </div >
   );
 }
 
