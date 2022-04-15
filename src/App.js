@@ -12,6 +12,8 @@ import React from 'react';
 // import { makeStyles } from '@mui/styles';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { orange, green } from '@mui/material/colors';
+import 'fontsource-roboto';
+import Typography from '@mui/material/Typography';
 
 // const useStyles = makeStyles({
 //   root: {
@@ -25,6 +27,11 @@ import { orange, green } from '@mui/material/colors';
 // });
 
 const theme = createTheme({
+  typography: {
+    h2: {
+      fontSize: 36
+    }
+  },
   palette: {
     primary: {
       main: orange[500]
@@ -62,6 +69,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <header className="App-header">
+          <Typography variant="h2" component="div">
+            Welcome to MUI
+          </Typography>
+          <Typography variant="subtitle1">
+            Learn how to use MUI
+          </Typography>
           <ButtonStyled />
           <TextField variant="filled" color="secondary" type="time" label="Time" />
           <TextField variant="outlined" color="primary" type="email" label="Email" placeholder="test@test.com" />
