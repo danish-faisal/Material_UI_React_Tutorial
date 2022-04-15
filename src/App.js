@@ -9,6 +9,30 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import TextField from '@mui/material/TextField';
 import React from 'react';
+// import { makeStyles } from '@mui/styles';
+
+// const useStyles = makeStyles({
+//   root: {
+//     background: 'linear-gradient(45deg, #FE6B8B, #FF8E53)',
+//     border: 0,
+//     marginBottom: '15px !important',
+//     borderRadius: '15px !important',
+//     color: 'white !important',
+//     padding: '5px 30px'
+//   }
+// });
+
+function ButtonStyled() {
+  const style = {
+    background: 'linear-gradient(45deg, #FE6B8B, #FF8E53)',
+    border: 0,
+    marginBottom: '15px',
+    borderRadius: '15px',
+    color: 'white',
+    padding: '5px 30px'
+  };
+  return <Button sx={style}>Test Styled Button</Button>
+}
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(false);
@@ -23,6 +47,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ButtonStyled />
         <TextField variant="filled" color="secondary" type="time" label="Time" />
         <TextField variant="outlined" color="primary" type="email" label="Email" placeholder="test@test.com" />
         <CheckboxExample />
