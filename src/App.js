@@ -10,6 +10,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 // import { makeStyles } from '@mui/styles';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { orange, green } from '@mui/material/colors';
 
 // const useStyles = makeStyles({
 //   root: {
@@ -21,6 +23,18 @@ import React from 'react';
 //     padding: '5px 30px'
 //   }
 // });
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: orange[500]
+    },
+    secondary: {
+      main: green[400]
+    }
+  },
+});
+
 
 function ButtonStyled() {
   const style = {
@@ -45,24 +59,26 @@ function CheckboxExample() {
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ButtonStyled />
-        <TextField variant="filled" color="secondary" type="time" label="Time" />
-        <TextField variant="outlined" color="primary" type="email" label="Email" placeholder="test@test.com" />
-        <CheckboxExample />
-        <ButtonGroup variant="contained" size="large">
-          {/* variant="contained" size="large" href="#" onClick={() => alert("Hello")} disabled  style={{ fontSize: 18 }} endIcon={<SaveAltIcon />}*/}
-          <Button startIcon={<SaveIcon />} color="primary">
-            Save
-          </Button>
-          <Button startIcon={<DeleteIcon />} color="secondary">
-            Discard
-          </Button>
-        </ButtonGroup>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div >
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header className="App-header">
+          <ButtonStyled />
+          <TextField variant="filled" color="secondary" type="time" label="Time" />
+          <TextField variant="outlined" color="primary" type="email" label="Email" placeholder="test@test.com" />
+          <CheckboxExample />
+          <ButtonGroup variant="contained" size="large">
+            {/* variant="contained" size="large" href="#" onClick={() => alert("Hello")} disabled  style={{ fontSize: 18 }} endIcon={<SaveAltIcon />}*/}
+            <Button startIcon={<SaveIcon />} color="primary">
+              Save
+            </Button>
+            <Button startIcon={<DeleteIcon />} color="secondary">
+              Discard
+            </Button>
+          </ButtonGroup>
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+      </div >
+    </ThemeProvider>
   );
 }
 
